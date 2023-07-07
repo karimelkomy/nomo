@@ -1,0 +1,24 @@
+module.exports = {
+  skipJsErrors: true,
+  disablePageCaching: true,
+  skipUncaughtErrors: true,
+  maximizeWindow: true,
+  waits: {
+    load: {
+      maxAttempts: 25,
+      timeout: 2000,
+    },
+    url: {
+      maxAttempts: 40,
+      timeout: 2000,
+    },
+    showing: {
+      maxAttempts: 5,
+      timeout: 1000,
+    },
+    disappear: {
+      maxAttempts: 10,
+      timeout: 2000,
+    },
+  },
+};
