@@ -1,5 +1,5 @@
 const DOC_ALLURE_CONFIG = {
-  CLEAN_REPORT_DIR: true,
+  CLEAN_REPORT_DIR: false,
   COPY_HISTORY: false,
   CLEAN_VIDEOS: false,
   CLEAN_SCREENSHOTS: false,

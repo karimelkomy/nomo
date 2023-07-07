@@ -19,10 +19,6 @@ export default class Actions {
     }
   }
 
-  async selectOption(elementXP) {
-    await t.click(selectorXP(elementXP));
-  }
-
   async hover(elementXP) {
     await this.validateElementVisibility(elementXP);
     await t.hover(selectorXP(elementXP));
@@ -38,58 +34,15 @@ export default class Actions {
     await t.typeText(selectorXP(elementXP), value.toString());
   }
 
-  async uploadFile(filePath, inputXP) {
-    await t.setFilesToUpload(selectorXP(inputXP), [filePath]);
-  }
-
   async getText(elementXP) {
     await this.validateElementVisibility(elementXP);
 
     return selectorXP(elementXP).innerText;
   }
 
-  async getInputText(elementXP) {
-    await this.validateElementVisibility(elementXP);
-
-    return selectorXP(elementXP).value;
-  }
-
-  async getAttributeValue(elementXP, attribute) {
-    await this.validateElementVisibility(elementXP);
-
-    return selectorXP(elementXP).getAttribute(attribute);
-  }
-
   async switchToIframe(iframeXP) {
     await this.validateElementVisibility(iframeXP);
     await t.switchToIframe(selectorXP(iframeXP));
-  }
-
-  async wait(seconds) {
-    await t.wait(seconds * 1000);
-  }
-
-  async validateEqual(actual, expected) {
-    await t.expect(actual).eql(expected);
-  }
-
-  async validateInputTextEqual(elementXP, expected) {
-    const actual = await this.getInputText(elementXP);
-
-    await t
-      .expect(actual)
-      .eql(
-        expected,
-        `validateInputTextEqual failed - "${elementXP}". Current URL: ${await getCurrentUrl()}`
-      );
-  }
-
-  async pressEnter() {
-    await t.pressKey("enter");
-  }
-
-  async getCount(elementXP) {
-    return selectorXP(elementXP).count;
   }
 
   async validateElementVisibility(elementXP) {

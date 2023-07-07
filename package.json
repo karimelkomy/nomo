@@ -1,7 +1,7 @@
 {
-  "name": "floward-task",
+  "name": "nomo-task",
   "version": "1.0.0",
-  "description": "AT for Floward",
+  "description": "AT for Nomo",
   "main": "doc-allure-config.js",
   "directories": {
     "test": "tests"

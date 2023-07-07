@@ -18,9 +18,9 @@
           "${DATE}_${TIME}/${TEST}/${USERAGENT}/${QUARANTINE_ATTEMPT}.png",
       })
       .video("Videos", {
-        singleFile: false,
+        singleFile: true,
         failedOnly: false,
-        pathPattern: "${DATE}_${TIME}/${TEST}/${USERAGENT}/${FILE_INDEX}.mp4",
+        pathPattern: "${DATE}_${TIME}/${USERAGENT}/${FILE_INDEX}.mp4",
       });
 
     runner.filter(
