@@ -9,6 +9,7 @@ export default class Actions {
   async click(elementXP) {
     try {
       await this.validateElementVisibility(elementXP);
+
       await t.click(selectorXP(elementXP));
     } catch (e) {
       throw new Error(`
